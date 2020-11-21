@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Travel</string>
+    <string name="register_button">REGISTER A NEW ACCOUNT</string>
+    <string name="login_button">LOGIN</string>
+    <string name="plane">PLANE</string>
+    <string name="train">TRAIN</string>
+    <string name="car_bus">CAR | BUS</string>
+
+</resources>

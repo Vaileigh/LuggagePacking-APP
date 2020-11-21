@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relative_info_layout"
+    android:background="@drawable/background_list"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TravelInfoActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/header_relative"
+        style="@style/AppTheme"
+        android:layout_width="match_parent"
+        android:layout_height="61dp"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="63dp"
+            android:layout_height="60dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="start"
+            android:layout_marginStart="-1dp"
+            android:layout_marginLeft="-1dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="1dp"
+            android:background="#00FFFFFF"
+            android:onClick="previous"
+            android:scaleType="centerInside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/logout" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="316dp"
+            android:layout_height="33dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="19dp"
+            android:layout_marginLeft="19dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginRight="14dp"
+            android:layout_toEndOf="@+id/imageButton"
+            android:layout_toRightOf="@+id/imageButton"
+            android:layout_weight="1"
+            android:fontFamily="serif"
+            android:gravity="center|right"
+            android:text="LUGGAGE PACKING GUIDE"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/titlePower"
+            android:layout_width="317dp"
+            android:layout_height="26dp"
+            android:layout_below="@+id/textView2"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="18dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginRight="14dp"
+            android:layout_marginBottom="1dp"
+            android:layout_toEndOf="@+id/imageButton"
+            android:layout_toRightOf="@+id/imageButton"
+            android:fontFamily="casual"
+            android:gravity="end"
+            android:text="powered by gsuzim" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="588dp"
+        android:layout_above="@+id/next_button"
+        android:layout_below="@+id/header_relative"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="0dp">
+
+        <RelativeLayout
+            android:id="@+id/scroll_relative"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <ToggleButton
+                android:id="@+id/male_toggleButton"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="100dp"
+                android:checked="false"
+                android:fontFamily="casual"
+                android:text="ToggleButton"
+                android:textOff="MALE"
+                android:textOn="MALE" />
+
+            <ToggleButton
+                android:id="@+id/female_toggleButton"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginTop="100dp"
+                android:layout_toEndOf="@+id/male_toggleButton"
+                android:layout_toRightOf="@+id/male_toggleButton"
+                android:checked="false"
+                android:fontFamily="casual"
+                android:text="ToggleButton"
+                android:textOff="FEMALE"
+                android:textOn="FEMALE" />
+
+            <ToggleButton
+                android:id="@+id/business_toggleButton"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/transportation_imageView"
+                android:layout_alignEnd="@+id/transportation_imageView"
+                android:layout_alignRight="@+id/transportation_imageView"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:checked="false"
+                android:fontFamily="casual"
+                android:text="BUSINESS"
+                android:textOff="BUSINESS"
+                android:textOn="BUSINESS" />
+
+            <ToggleButton
+                android:id="@+id/leisure_toggleButton"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/transportation_imageView"
+                android:layout_alignStart="@+id/transportation_imageView"
+                android:layout_alignLeft="@+id/transportation_imageView"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="9dp"
+                android:checked="false"
+                android:fontFamily="casual"
+                android:text="LEISURE"
+                android:textOff="LEISURE"
+                android:textOn="LEISURE" />
+
+            <ImageView
+                android:id="@+id/transportation_imageView"
+                android:layout_width="391dp"
+                android:layout_height="171dp"
+                android:layout_below="@id/male_toggleButton"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@android:drawable/screen_background_dark_transparent" />
+
+            <ImageView
+                android:id="@+id/transportation_imageView2"
+                android:layout_width="392dp"
+                android:layout_height="145dp"
+                android:layout_alignStart="@+id/transportation_imageView"
+                android:layout_alignLeft="@+id/transportation_imageView"
+                android:layout_alignEnd="@+id/transportation_imageView"
+                android:layout_alignRight="@+id/transportation_imageView"
+                android:layout_alignBottom="@+id/transportation_imageView"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                app:srcCompat="@android:drawable/screen_background_dark_transparent" />
+
+            <TextView
+                android:id="@+id/filter_textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/transportation_imageView"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:background="@android:color/white"
+                android:fontFamily="@font/advent_pro"
+                android:text="\t\tTRANSPORTATION :"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:id="@+id/radioGenderGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/filter_textView2"
+                android:layout_alignStart="@+id/transportation_imageView2"
+                android:layout_alignLeft="@+id/transportation_imageView2"
+                android:layout_marginStart="-2dp"
+                android:layout_marginLeft="-2dp"
+                android:layout_marginTop="10dp">
+
+                <RadioButton
+                    android:id="@+id/radioButton"
+                    android:layout_width="166dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="-1dp"
+                    android:layout_marginLeft="-1dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@android:color/white"
+                    android:checked="true"
+                    android:fontFamily="casual"
+                    android:text="@string/plane" />
+
+                <RadioButton
+                    android:id="@+id/radioButton2"
+                    android:layout_width="166dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="-1dp"
+                    android:layout_marginLeft="-1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@android:color/white"
+                    android:fontFamily="casual"
+                    android:text="@string/train" />
+
+                <RadioButton
+                    android:id="@+id/radioButton3"
+                    android:layout_width="166dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="-1dp"
+                    android:layout_marginLeft="-1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@android:color/white"
+                    android:fontFamily="casual"
+                    android:text="@string/car_bus" />
+            </RadioGroup>
+
+            <ImageView
+                android:id="@+id/activity_imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="151dp"
+                android:layout_alignStart="@+id/transportation_imageView"
+                android:layout_alignLeft="@+id/transportation_imageView"
+                android:layout_alignEnd="@+id/activity_imageView"
+                android:layout_alignRight="@+id/activity_imageView"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                app:srcCompat="@android:drawable/screen_background_dark_transparent" />
+
+            <ImageView
+                android:id="@+id/activity_imageView"
+                android:layout_width="391dp"
+                android:layout_height="177dp"
+                android:layout_below="@id/leisure_toggleButton"
+                android:layout_alignStart="@+id/transportation_imageView"
+                android:layout_alignLeft="@+id/transportation_imageView"
+                android:layout_alignEnd="@+id/transportation_imageView"
+                android:layout_alignRight="@+id/transportation_imageView"
+                android:layout_marginStart="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@android:drawable/screen_background_dark_transparent" />
+
+            <TextView
+                android:id="@+id/activity_textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/activity_imageView"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:background="@android:color/white"
+                android:fontFamily="@font/advent_pro"
+                android:text="\t\tACTIVITIES:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="18sp" />
+
+            <ToggleButton
+                android:id="@+id/waterSport_toggleButton"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/activity_textView"
+                android:layout_alignStart="@+id/activity_imageView"
+                android:layout_alignLeft="@+id/activity_imageView"
+                android:layout_alignEnd="@+id/activity_imageView"
+                android:layout_alignRight="@+id/activity_imageView"
+                android:layout_marginStart="95dp"
+                android:layout_marginLeft="95dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="95dp"
+                android:layout_marginRight="95dp"
+                android:checked="false"
+                android:fontFamily="casual"
+                android:foregroundGravity="center"
+                android:text="WATER SPORT"
+                android:textOff="WATER SPORT"
+                android:textOn="WATER SPORT"
+                android:textSize="12sp" />
+
+            <ToggleButton
+                android:id="@+id/mountainClimb_toggleButton"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/waterSport_toggleButton"
+                android:layout_alignStart="@+id/waterSport_toggleButton"
+                android:layout_alignLeft="@+id/waterSport_toggleButton"
+                android:layout_alignEnd="@+id/waterSport_toggleButton"
+                android:layout_alignRight="@+id/waterSport_toggleButton"
+                android:layout_marginStart="-1dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginRight="1dp"
+                android:checked="false"
+                android:fontFamily="casual"
+                android:text="MOUNTAIN CLIMB"
+                android:textOff="MOUNTAIN CLIMB"
+                android:textOn="MOUNTAIN CLIMB"
+                android:textSize="12sp" />
+
+            <ToggleButton
+                android:id="@+id/survival_toggleButton"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/mountainClimb_toggleButton"
+                android:layout_alignStart="@+id/mountainClimb_toggleButton"
+                android:layout_alignLeft="@+id/mountainClimb_toggleButton"
+                android:layout_alignEnd="@+id/mountainClimb_toggleButton"
+                android:layout_alignRight="@+id/mountainClimb_toggleButton"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:checked="false"
+                android:fontFamily="casual"
+                android:text="SURVIVAL"
+                android:textOff="SURVIVAL"
+                android:textOn="SURVIVAL"
+                android:textSize="12sp" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/next_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginBottom="5dp"
+        android:fontFamily="@font/advent_pro"
+        android:onClick="next"
+        android:text="NEXT >" />
+
+    <ImageView
+        android:id="@+id/location_imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="93dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginRight="11dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@android:color/darker_gray" />
+
+    <ImageView
+        android:id="@+id/day_imageView"
+        android:layout_width="112dp"
+        android:layout_height="107dp"
+        android:layout_below="@+id/location_imageView"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@android:color/darker_gray" />
+
+    <ImageView
+        android:id="@+id/day_imageView2"
+        android:layout_width="112dp"
+        android:layout_height="107dp"
+        android:layout_below="@+id/location_imageView"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@color/cardview_shadow_start_color" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/day_imageView"
+        android:layout_alignRight="@+id/day_imageView"
+        android:layout_alignBottom="@+id/day_imageView"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"
+        android:text="DAY"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/beginDate_textView"
+        android:layout_width="109dp"
+        android:layout_height="18dp"
+        android:layout_below="@+id/selectDate_textView"
+        android:layout_alignStart="@+id/location_imageView"
+        android:layout_alignLeft="@+id/location_imageView"
+        android:layout_alignBottom="@+id/location_imageView"
+        android:layout_marginStart="63dp"
+        android:layout_marginLeft="63dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="20dp"
+        android:layout_toStartOf="@+id/to_textView"
+        android:layout_toLeftOf="@+id/to_textView"
+        android:background="#FFFFFF"
+        android:fontFamily="@font/advent_pro"
+        android:gravity="center"
+        android:text="01/01/1960" />
+
+    <TextView
+        android:id="@+id/from_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="21dp"
+        android:layout_below="@+id/selectDate_textView"
+        android:layout_alignBottom="@+id/location_imageView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="11dp"
+        android:layout_marginLeft="11dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="34dp"
+        android:fontFamily="@font/advent_pro"
+        android:text="from :"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/selectDate_textView"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/location_imageView"
+        android:layout_alignEnd="@+id/location_imageView"
+        android:layout_alignRight="@+id/location_imageView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="-9dp"
+        android:layout_marginRight="-9dp"
+        android:background="#FFFFFF"
+        android:fontFamily="@font/advent_pro"
+        android:text="\t\tSELECT DATE :"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/day_textView"
+        android:layout_width="108dp"
+        android:layout_height="99dp"
+        android:layout_alignEnd="@+id/location_imageView"
+        android:layout_alignRight="@+id/location_imageView"
+        android:layout_alignBottom="@+id/day_imageView"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
+        android:layout_marginBottom="3dp"
+        android:fontFamily="@font/advent_pro"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:text="00"
+        android:textColor="#FFFFFF"
+        android:textSize="60sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/endDate_textView"
+        android:layout_width="109dp"
+        android:layout_height="18dp"
+        android:layout_below="@+id/selectDate_textView"
+        android:layout_alignEnd="@+id/location_imageView"
+        android:layout_alignRight="@+id/location_imageView"
+        android:layout_alignBottom="@+id/location_imageView"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginBottom="21dp"
+        android:layout_toEndOf="@+id/to_textView"
+        android:layout_toRightOf="@+id/to_textView"
+        android:background="#FFFFFF"
+        android:fontFamily="@font/advent_pro"
+        android:gravity="center"
+        android:text="01/01/1960" />
+
+    <TextView
+        android:id="@+id/to_textView"
+        android:layout_width="51dp"
+        android:layout_height="26dp"
+        android:layout_below="@+id/selectDate_textView"
+        android:layout_alignBottom="@+id/location_imageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="18dp"
+        android:fontFamily="@font/advent_pro"
+        android:foregroundGravity="center"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:text="- to -"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>
